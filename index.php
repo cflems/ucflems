@@ -2,7 +2,8 @@
 define('INTERNAL', 1);
 if (!empty($_POST['shorten'])) {
   $dst = filter_var($_POST['dst'], FILTER_VALIDATE_URL);
-  if ($dst !== false) {
+  $dst_scheme = strtolower(parse_url($dst, PHP_URL_SCHEME));
+  if (in_array($dst_scheme, array('http', 'https'), true)) {
     include 'db.inc.php';
     $stmt = $db->prepare('INSERT INTO links (dst) VALUES (?)') or die($db->error);
     $stmt->bind_param('s', $dst) or die($stmt->error);
