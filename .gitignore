@@ -1,0 +1,2 @@
+# exports $db = new mysqli(...)
+db.inc.php
