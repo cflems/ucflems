@@ -35,7 +35,7 @@ if (!empty($_POST['shorten'])) {
       <hr />
       <div id="shortener">
 <?php
-if (empty($_POST['shorten'])) {
+if (empty($src)) {
 ?>
         <h2>You know what to do.</h2>
         <form action="" method="post">
