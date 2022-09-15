@@ -5,17 +5,27 @@
 #shortener form p {
   margin: 1em 0;
 }
+#shortener form {
+  padding: 0 5em;
+}
 #shortener form input[type=text] {
-  font-size: 14pt;
-  padding: 0.2em;
+  font-family: 'DejaVu Sans';
+  font-size: 12pt;
+  padding: 0.25em 0.5em;
+  margin: 1em auto 0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
-  border-radius: 0.2em;
-  border-width: 1px;
+  border: none;
+  width: 100%;
+}
+#shortener form input[type=text]:focus,#shortener form input[type=text]:focus-visible {
+  outline-offset: 0;
+  outline: 1px solid black;
+  border: 1px solid black;
 }
 #shortener form input[type=submit] {
   background-color: #ffffff;
   border: none;
-  padding: 0.5em 1em;
+  padding: 0.3em 0.6em;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   color: #505050;
