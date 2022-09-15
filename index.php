@@ -28,21 +28,25 @@ if (empty($_POST['shorten'])) {
           <p><input type="text" name="dst" placeholder="https://pqrstuv.longlinksrus.org/abcd/efgh/ijkl/mnop" /></p>
           <p><input type="submit" name="shorten" value="Shorten" /></p>
         </form>
-<?php
-} else {
-  $dst = 'https://u.cflems.net/1';
-?>
-        <h2><a href="#" onclick="navigator.clipboard.writeText('<?=addslashes($dst);?>'); return false;"><?=htmlentities($dst);?></a></h2>
-<?php
-}
-?>
       </div>
       <hr />
       <div id="bubblefoot">
         <a href="https://cflems.net/">&larr; Home</a>
       </div>
+<?php
+} else {
+  $dst = 'https://u.cflems.net/1';
+?>
+        <h2><a href="#" onclick="navigator.clipboard.writeText('<?=addslashes($dst);?>'); return false;"><?=htmlentities($dst);?></a></h2>
+      </div>
+      <hr />
+      <div id="bubblefoot">
+        <a href="https://u.cflems.net/">&larr; Back</a>
+      </div>
+<?php
+}
+?>
     </div>
-    content..
   </div>
   <p id="copy"><span id="copynotice">Copyright &copy; 2016-<?=date('Y');?> Carson Fleming</span></p>
   </body>
