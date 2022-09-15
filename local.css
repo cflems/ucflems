@@ -13,7 +13,18 @@
   border-width: 1px;
 }
 #shortener form input[type=submit] {
+  background-color: #ffffff;
+  border: none;
+  padding: 0.5em 1em;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  color: #505050;
+  font-family: 'DejuVu Sans Extra-Light';
+  font-size: 12pt;
+}
+#shortener form input[type=submit]:hover,#shortener form input[type=submit]:active {
+  box-shadow: 0 0 3px rgba(0, 127, 255, 0.75);
+}
+#shortener form input[type=submit]:active {
   background-color: #eeeeee;
-  padding: 2em 4em;
-  border-color: #aaccff;
 }
