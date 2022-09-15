@@ -19,8 +19,12 @@ define('INTERNAL', 1);
     <div id="bubble">
       <h1>ucflems</h1>
       <hr />
-      <div>
-        content
+      <div id="shortener">
+        <h2>You know what to do.</h2>
+        <form action="" method="post">
+          <p><input type="text" name="dst" placeholder="https://pqrstuv.longlinksrus.org/abcd/efgh/ijkl/mnop" /></p>
+          <p><input type="submit" name="shorten" value="Shorten" /></p>
+        </form>
       </div>
       <hr />
       <div id="bubblefoot">
