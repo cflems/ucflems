@@ -1,0 +1,12 @@
+#shortener {
+  margin: 1em auto;
+  text-align: center;
+}
+#shortener form p {
+  margin: 1em 0;
+}
+#shortener form input {
+  font-size: 14pt;
+  padding: 0.2em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+}
