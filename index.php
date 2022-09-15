@@ -1,5 +1,17 @@
 <?php
 define('INTERNAL', 1);
+if (!empty($_POST['shorten'])) {
+  include 'db.inc.php';
+  $stmt = $db->prepare('INSERT INTO links (dst) VALUES (?)') or die($db->error);
+  // formatting check on $_POST['dst'] pls
+  $stmt->bind_param('s', $_POST['dst']) or die($stmt->error);
+  $stmt->execute() or die($stmt->error);
+  if ($stmt->affected_rows < 1)
+    die('Insert failed: ' . $db->error . $stmt->error);
+  $dst = 'https://u.cflems.net/' . $stmt->insert_id;
+  $stmt->close();
+  $db->close();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +47,6 @@ if (empty($_POST['shorten'])) {
       </div>
 <?php
 } else {
-  $dst = 'https://u.cflems.net/1';
 ?>
         <h2><a href="#" onclick="navigator.clipboard.writeText('<?=addslashes($dst);?>'); return false;"><?=htmlentities($dst);?></a></h2>
       </div>
