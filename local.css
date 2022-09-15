@@ -19,12 +19,12 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   color: #505050;
-  font-family: 'DejuVu Sans Extra-Light';
+  font-family: 'DejaVu Sans Extra-Light';
   font-size: 12pt;
 }
 #shortener form input[type=submit]:hover,#shortener form input[type=submit]:active {
   box-shadow: 0 0 3px rgba(0, 127, 255, 0.75);
 }
 #shortener form input[type=submit]:active {
-  background-color: #eeeeee;
+  background-color: #f0f0f0;
 }
