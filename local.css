@@ -10,3 +10,7 @@
   padding: 0.2em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 }
+#shortener form input[type=text] {
+  border-radius: 0.2em;
+  border-width: 1px;
+}
