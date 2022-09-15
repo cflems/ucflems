@@ -1,16 +1,18 @@
 <?php
 define('INTERNAL', 1);
 if (!empty($_POST['shorten'])) {
-  include 'db.inc.php';
-  $stmt = $db->prepare('INSERT INTO links (dst) VALUES (?)') or die($db->error);
-  // formatting check on $_POST['dst'] pls
-  $stmt->bind_param('s', $_POST['dst']) or die($stmt->error);
-  $stmt->execute() or die($stmt->error);
-  if ($stmt->affected_rows < 1)
-    die('Insert failed: ' . $db->error . $stmt->error);
-  $dst = 'https://u.cflems.net/' . $stmt->insert_id;
-  $stmt->close();
-  $db->close();
+  $dst = filter_var($_POST['dst'], FILTER_VALIDATE_URL);
+  if ($dst !== false) {
+    include 'db.inc.php';
+    $stmt = $db->prepare('INSERT INTO links (dst) VALUES (?)') or die($db->error);
+    $stmt->bind_param('s', $dst) or die($stmt->error);
+    $stmt->execute() or die($stmt->error);
+    if ($stmt->affected_rows < 1)
+      die('Insert failed: ' . $db->error . $stmt->error);
+    $src = 'https://u.cflems.net/' . $stmt->insert_id;
+    $stmt->close();
+    $db->close();
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -48,7 +50,7 @@ if (empty($_POST['shorten'])) {
 <?php
 } else {
 ?>
-        <h2><a href="#" onclick="navigator.clipboard.writeText('<?=addslashes($dst);?>'); return false;"><?=htmlentities($dst);?></a></h2>
+        <h2><a href="#" onclick="navigator.clipboard.writeText('<?=addslashes($src);?>'); return false;"><?=htmlentities($src);?></a></h2>
       </div>
       <hr />
       <div id="bubblefoot">
