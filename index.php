@@ -20,11 +20,22 @@ define('INTERNAL', 1);
       <h1>ucflems</h1>
       <hr />
       <div id="shortener">
+<?php
+if (empty($_POST['shorten'])) {
+?>
         <h2>You know what to do.</h2>
         <form action="" method="post">
           <p><input type="text" name="dst" placeholder="https://pqrstuv.longlinksrus.org/abcd/efgh/ijkl/mnop" /></p>
           <p><input type="submit" name="shorten" value="Shorten" /></p>
         </form>
+<?php
+} else {
+  $dst = 'https://u.cflems.net/1';
+?>
+        <h2><a href="#" onclick="navigator.clipboard.writeText('<?=addslashes($dst);?>'); return false;"><?=htmlentities($dst);?></a></h2>
+<?php
+}
+?>
       </div>
       <hr />
       <div id="bubblefoot">
