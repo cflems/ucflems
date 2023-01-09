@@ -10,6 +10,7 @@
 }
 #shortener form input[type=text] {
   font-family: 'DejaVu Sans';
+  font-weight: 400;
   font-size: 12pt;
   padding: 0.25em 0.5em;
   margin: 1em 0 1px;
@@ -30,7 +31,8 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   color: #505050;
-  font-family: 'DejaVu Sans Extra-Light';
+  font-family: 'DejaVu Sans';
+  font-weight: 200;
   font-size: 12pt;
 }
 #shortener form input[type=submit]:hover,#shortener form input[type=submit]:active {
