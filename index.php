@@ -22,6 +22,7 @@ if (!empty($_POST['shorten'])) {
     <meta charset="utf-8" />
     <title>ucflems</title>
     <link rel="icon" type="image/svg+xml" href="https://cdn.cflems.net/c6ffca023.svg" />
+    <link rel="stylesheet" href="https://cflems.net/css/fonts.css" />
     <link rel="stylesheet" href="https://cflems.net/css/energize.css" />
     <link rel="stylesheet" href="https://cflems.net/css/contact.css" />
     <link rel="stylesheet" href="https://cflems.net/css/nav.css" />
